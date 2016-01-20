@@ -9,13 +9,13 @@ function start(response)
     exec("ls -lah", //{ timeout : 100, maxBuffer: 20000*1024}, 
     function(error, stdout, stderr){
        response.writeHead(200, {"Content-Type" : "text/plain"});
-        function sleep(milliSeconds) {
-            var startTime = new Date().getTime();
-            while (new Date().getTime() < startTime + milliSeconds);
-        }
-       sleep(10000);
+    //     function sleep(milliSeconds) {
+    //         var startTime = new Date().getTime();
+    //         while (new Date().getTime() < startTime + milliSeconds);
+    //     }
+    //    sleep(10000);
        console.log("sdfsdfasdfasd");
-       response.write(stdout);
+       response.write(stdout + "asdfasdfasdfasdfasd");
        response.end();
     });
     // var body = '<html>'+
