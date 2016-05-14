@@ -7,12 +7,14 @@ var router = require("./router");
 var requestHandler = require("./requestHandler");
 
 var handler = {}
-handler["/"] = requestHandler.start;
-handler["/start"] = requestHandler.start;
+handler["/"] = requestHandler.upload;
+handler["/champ/type"] = requestHandler.req_match;
 handler["/upload"] = requestHandler.upload;
 
 var test = "ffffffffffff";
 server.run(router.route, handler);
 
-console.log("haha");
+
+var connect = require('connect');
+var event = require('event');
 

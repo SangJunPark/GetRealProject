@@ -5,7 +5,14 @@
 function route(handler, pathName, response)
 {
     console.log("About to route a request for " + pathName);
+    
+    //var regex = '/\s=\d';
+//    var v = regex.match(pathName);
+    
+  //  var a = "champ=";
+    
     if(typeof(handler[pathName]) === 'function'){
+        
         handler[pathName](response);
     }
     else {

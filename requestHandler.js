@@ -1,23 +1,28 @@
-/**
+    /**
  * Created by user on 2015-12-15.
  */
-var exec = require("child_process").exec;
-function start(response)
+// var obj = {};
+// obj.rootType = "object";
+// 
+// var func = function() { };
+// 
+// func.a = 10;
+// func.b = 11;
+// 
+// func.prototype = obj.__proto__;
+// console.log(func.rootType);
+// 
+// console.log(func);
+// 
+// var exec = require("child_process").exec;
+var matchreq = require("./matchreq");
+var fs = require('fs');
+var express = require('express');
+var app = express();
+
+function Req_Match(response)
 {
     console.log("request handler - start");
-    //var content = "hey boy";
-    exec("ls -lah", //{ timeout : 100, maxBuffer: 20000*1024}, 
-    function(error, stdout, stderr){
-       response.writeHead(200, {"Content-Type" : "text/plain"});
-    //     function sleep(milliSeconds) {
-    //         var startTime = new Date().getTime();
-    //         while (new Date().getTime() < startTime + milliSeconds);
-    //     }
-    //    sleep(10000);
-       console.log("sdfsdfasdfasd");
-       response.write(stdout + "asdfasdfasdfasdfasd");
-       response.end();
-    });
     // var body = '<html>'+
     //     '<head>'+
     //     '<meta http-equiv="Content-Type" content="text/html; '+
@@ -30,10 +35,23 @@ function start(response)
     //     '<input type="submit" value="하이" />'+
     //     '</form>'+
     //     '</body>'+
-    //     '</html>';
-    // response.writeHead(200, {"Content-Type" : "text/html"});
-    // response.write(body);
-    // response.end();
+    //     '</html>'
+    
+    var _base = __dirname + "\\" + "html\test.html";
+   
+    p.sendFile(_base);          
+    //response.writeHead(200, {"Content-Type" : "text/html"});
+    //response.write(body);
+    
+    // matchreq.match( function(data) {
+    //    var result = "";
+    //    for(var i = 0; i < data.length; ++ i)
+    //    {
+    //         result += data[i]['champion'] + ':' + data[i]['lane'] + '\n'; 
+    //    }
+    //    response.write(result);
+    //    response.end(); 
+    // });
 }
 
 function upload(response)
@@ -45,5 +63,5 @@ function upload(response)
     //return "Hello Upload";
 }
 
-exports.start = start;
+exports.req_match = Req_Match;
 exports.upload = upload;
