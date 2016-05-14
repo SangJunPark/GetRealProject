@@ -5,7 +5,7 @@
 			"name": "Launch",
 			"type": "node",
 			"request": "launch",
-			"program": "HelloWorld.js",
+			"program": "TestCode/simpleserver.js",
 			"stopOnEntry": false,
 			"args": [],
 			"cwd": ".",
